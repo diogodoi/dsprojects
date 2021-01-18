@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run statitics.py
+web: sh setup.sh && streamlit run excelapp.py

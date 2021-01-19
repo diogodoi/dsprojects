@@ -17,7 +17,15 @@ from PIL import Image
 image = Image.open('simple-village-house-background-vector.jpg')
 st.image(image,use_column_width=True)
 
-st.title('Qual o valor do m²?')
+st.title('Dashboard iterativa, prevendo o valor das casas.')
+st.write('''Criado por Diogo Godoi 18/01/2020.
+
+	O intuito aqui é prever o valor da casa desejada a partir da quantidade de banheiros, quartos, andares, do tamanho em m² e se é localizada próxima a praia utilizando
+	de modelos de aprendizado de máquina.
+	
+	Como utilizar? Selecione os aspectos no Menu de Seleção em seguida clique em para gerar um mapa e uma tabela onde são encontradas casas com os aspectos desejado.
+	
+	''')
 
 def run_status():
     latest_iteration = st.empty()
@@ -52,7 +60,7 @@ params = {
     'bathrooms':st.sidebar.selectbox('Banheiros',(1,1.5,2,2.5,3,3.5,4,4.5,5)),
     'floors':st.sidebar.selectbox('Andares',(df['floors'].unique())),
     'sqft':st.sidebar.slider('Metros quadrados',0.1,max(df['sqft_living']),step=0.1),
-    'waterfront': 1 if st.sidebar.checkbox("Fonte D'agua") else 0 
+    'waterfront': 1 if st.sidebar.checkbox("Próxima a praia?") else 0 
 }
 @st.cache
 def get_locations(zip):
@@ -106,7 +114,7 @@ def get_models():
 def run_data():
     run_status()
     df_models = get_models()[0][0]
-    st.write('Dados os valores, o valor da previsão é **${:.2f}$**'.format(df_models))
+    st.write('Dados os valores, a casa vale: **${:.2f}$**'.format(df_models))
     df1=map_df(df)
     st.map(df1)
     st.dataframe(df1)

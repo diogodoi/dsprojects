@@ -109,7 +109,7 @@ def run_data():
     st.write('Dados os valores, o valor da previsão é **${:.2f}$**'.format(df_models))
     df1=map_df(df)
     st.map(df1)
-    st..dataframe(df1)
+    st.dataframe(df1)
 
 def show_ML():
     df_models = get_models()[1]

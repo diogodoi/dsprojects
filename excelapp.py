@@ -17,7 +17,7 @@ from PIL import Image
 image = Image.open('simple-village-house-background-vector.jpg')
 st.image(image,use_column_width=True)
 
-st.title('Dashboard iterativa, prevendo o valor das casas.')
+st.title('Dashboard interativa, prevendo o valor das casas.')
 st.write('''Criado por Diogo Godoi 18/01/2020.
 
 	O intuito aqui é prever o valor da casa desejada a partir da quantidade de banheiros, quartos, andares, do tamanho em m² e se é localizada próxima a praia utilizando

@@ -14,10 +14,11 @@ import time
 import requests
 import json
 from PIL import Image
+st.set_page_config(page_title="Dashboard Casas",initial_sidebar_state="expanded")
 image = Image.open('simple-village-house-background-vector.jpg')
 st.image(image,use_column_width=True)
 
-st.set_page_config(page_title="Dashboard Casas",layout="centered",initial_sidebar_state="expanded")
+
 
 st.title('Dashboard interativa, prevendo o valor das casas.')
 st.text('''Criado por Diogo Godoi 18/01/2020.

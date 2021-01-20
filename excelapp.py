@@ -17,10 +17,7 @@ from PIL import Image
 image = Image.open('simple-village-house-background-vector.jpg')
 st.image(image,use_column_width=True)
 
-st.set_page_config(page_title="Dashboard Casas,     
-     layout="centered",
-   initial_sidebar_state="expanded",
- )
+st.set_page_config(page_title="Dashboard Casas,layout="centered",initial_sidebar_state="expanded")
 
 st.title('Dashboard interativa, prevendo o valor das casas.')
 st.text('''Criado por Diogo Godoi 18/01/2020.
